@@ -1,0 +1,6 @@
+- hosts: datanode
+
+  roles:
+  - hadoop
+  tasks:
+  - include_tasks: ./roles/hadoop/tasks/datanode_setup1.yml 

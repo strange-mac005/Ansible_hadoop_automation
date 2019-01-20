@@ -1,0 +1,19 @@
+#vars_prompt:
+#    name: email
+#    prompt: "enter email"
+#    public: yes
+
+- name:
+  docker_container:
+    name: "{{docker_name}}"
+    image: "{{docker_image}}"
+    recreate: yes
+    interactive: true
+    tty: true 
+    detach: false
+    env:  
+        DISPLAY: "{{lookup('env','DISPLAY')}}"
+    state: present
+    published_ports: 1111:4200  
+#    command: "date"
+        

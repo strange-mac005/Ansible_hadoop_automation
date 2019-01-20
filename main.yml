@@ -1,0 +1,13 @@
+- hosts: all
+  roles: 
+      - hadoop
+#     - docker
+  tasks:
+#  - include_vars: "/root/project/roles/docker/vars/main.yml"
+#  - import_tasks: "/root/project/roles/docker/tasks/docker_container_start.yml "
+#  - include_vars: "/root/project/roles/hadoop/vars/main.yml"
+  - include_tasks: "/root/project/roles/hadoop/tasks/namenode_setup1.yml"
+  - include_tasks: "/root/project/roles/hadoop/tasks/datanode_setup1.yml"
+  - import_tasks: "/root/project/roles/hadoop/tasks/jobtracker_setup1.yml"
+  - import_tasks: "/root/project/roles/hadoop/tasks/tasktracker_setup1.yml"
+

@@ -1,0 +1,11 @@
+#cloud Storage LV
+- parted:
+     device: /dev/sd{{diskvariable}}
+     number: 1
+     state: present
+- lvg:
+      vg: cloud
+      pv_options: /dev/sd{{diskvariable}}1
+      pvs: /dev/sd{{diskvariable}}1
+      state: present
+

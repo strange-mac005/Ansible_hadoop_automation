@@ -1,0 +1,9 @@
+- template:
+    src: "name_node_core.xml.j2"
+    dest: "/etc/hadoop/core-site.xml"
+- template:
+    src: "data_node_hdfs.xml.j2"
+    dest: "/etc/hadoop/hdfs-site.xml"
+- command: "hadoop-daemon.sh stop datanode"
+  ignore_errors: yes
+- command: "hadoop-daemon.sh start datanode"

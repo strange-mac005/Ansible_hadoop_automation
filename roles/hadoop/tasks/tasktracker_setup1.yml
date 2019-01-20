@@ -1,0 +1,6 @@
+- template:
+    src: "mapred.xml.j2"
+    dest: "/etc/hadoop/mapred-site.xml"
+- command: hadoop-daemon.sh stop tasktracker
+  ignore_errors: yes
+- command: hadoop-daemon.sh start tasktracker

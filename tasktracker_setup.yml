@@ -1,0 +1,6 @@
+- hosts: tasktracker
+
+  roles:
+  - hadoop
+  tasks:
+  - include_tasks: ./roles/hadoop/tasks/tasktracker_setup1.yml 

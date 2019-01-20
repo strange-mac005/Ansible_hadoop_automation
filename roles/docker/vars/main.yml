@@ -1,0 +1,2 @@
+docker_name: "mac"
+docker_image: "centos:latest"

@@ -1,0 +1,21 @@
+  - lvol:
+     vg: cloud
+     lv: "{{ email }}"
+     size: 2G
+  - filesystem:
+     fstype: ext4
+     dev: /dev/cloud/cloud
+  - file:
+     path: /root/mac1
+     state: directory
+  - mount:
+     path: /root/mac1
+     src: /dev/cloud/cloud
+     fstype: ext4
+     state: present
+  - lineinfile:
+      line:{{}}     
+  - service:
+     name: nfs
+     state: retsarted
+     enabled: true

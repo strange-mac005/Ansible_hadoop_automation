@@ -1,0 +1,5 @@
+- hosts: namenode
+  roles:
+  - hadoop
+  tasks:
+  - include_tasks: ./roles/hadoop/tasks/namenode_setup1.yml 

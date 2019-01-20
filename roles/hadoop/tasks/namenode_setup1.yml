@@ -1,0 +1,10 @@
+- template:
+     src: "name_node_hdfs.xml.j2"
+     dest: "/etc/hadoop/hdfs-site.xml"
+- template:
+     src: "name_node_core.xml.j2"
+     dest: "/etc/hadoop/core-site.xml"
+- command: "hadoop-daemon.sh stop namenode"
+  ignore_errors: yes
+- shell: "echo Y |  hadoop namenode -format"
+- command: "hadoop-daemon.sh start namenode"
